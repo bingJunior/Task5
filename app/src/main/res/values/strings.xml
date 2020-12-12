@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DiceRoller</string>
+    <string name="_1">1</string>
+    <string name="btn_roll">ROLL</string>
+    <string name="todo">TODO</string>
+    <string name="coin">TODO</string>
+    <string name="flip">Flip</string>
+</resources>

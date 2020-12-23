@@ -10,17 +10,24 @@ import androidx.appcompat.app.AppCompatActivity
  * on the screen.
  */
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var diceImageView : ImageView
+    private lateinit var coinImageView : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.button)
+        diceImageView = findViewById(R.id.diceIV)
+        coinImageView = findViewById(R.id.coinIV)
+
+        val rollButton: Button = findViewById(R.id.rollBtn)
         rollButton.setOnClickListener { rollDice() }
 
         // Do a dice roll when the app starts
         rollDice()
 
-        val flipCoin: Button = findViewById(R.id.button2)
+        val flipCoin: Button = findViewById(R.id.flipBtn)
         flipCoin.setOnClickListener { flipCoin() }
 
         // Do a coin flip when the app starts
@@ -43,9 +50,6 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
-        // Find the ImageView in the layout
-        val diceImage: ImageView = findViewById(R.id.imageView)
-
         // Determine which drawable resource ID to use based on the dice roll
         val drawableResource = when (diceRoll) {
             1 -> R.drawable.dice_1
@@ -56,10 +60,10 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         // Update the ImageView with the correct drawable resource ID
-        diceImage.setImageResource(drawableResource)
+        diceImageView.setImageResource(drawableResource)
 
         // Update the content description
-        diceImage.contentDescription = diceRoll.toString()
+        diceImageView.contentDescription = diceRoll.toString()
     }
 
     class Dice(private val numSides: Int) {
@@ -74,9 +78,6 @@ class MainActivity : AppCompatActivity() {
         val coin = Coin(2)
         val coinFlip = coin.flip()
 
-        // Find the ImageView in the layout
-        val coinImage: ImageView = findViewById(R.id.imageView2)
-
         // Determine which drawable resource ID to use based on the coin flip
         val drawableResource = when (coinFlip) {
             1 -> R.drawable.group_1
@@ -85,10 +86,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Update the ImageView with the correct drawable resource ID
-        coinImage.setImageResource(drawableResource)
+        coinImageView.setImageResource(drawableResource)
 
         // Update the content description
-        coinImage.contentDescription = coinFlip.toString()
+        coinImageView.contentDescription = coinFlip.toString()
      }
 
     class Coin(private val numSides: Int) {

@@ -36,8 +36,8 @@ This is an dice roller app as Activity 5 for KodeCamp Internship
 ### Testing
 I've provided the built apk for testing it just download and install it in your smartphone.
 
- * [Task 2 apk](https://github.com/bingJunior/Task5/tree/master/apk)
+ * [Activity 5 APK](https://github.com/bingJunior/Task5/tree/master/apk)
 
 ### Video
 
- * [Video](https://github.com/bingJunior/Task5/tree/master/Video)
+ * [Video](https://github.com/bingJunior/Task5/tree/master/video)

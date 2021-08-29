@@ -11,36 +11,22 @@ import androidx.appcompat.app.AppCompatActivity
  */
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var diceImageView : ImageView
-    private lateinit var coinImageView : ImageView
+    private lateinit var diceImageView1 : ImageView
+    private lateinit var diceImageView2 : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        diceImageView = findViewById(R.id.diceIV)
-        coinImageView = findViewById(R.id.coinIV)
+        diceImageView1 = findViewById(R.id.diceIV1)
+        diceImageView2 = findViewById(R.id.diceIV2)
 
         val rollButton: Button = findViewById(R.id.rollBtn)
         rollButton.setOnClickListener { rollDice() }
 
         // Do a dice roll when the app starts
         rollDice()
-
-        val flipCoin: Button = findViewById(R.id.flipBtn)
-        flipCoin.setOnClickListener { flipCoin() }
-
-        // Do a coin flip when the app starts
-        flipCoin()
     }
-
-    // "6" it will always display 6 only used for testing of app
-    // val resultTextView: TextView = findViewById(R.id.textView)
-    // resultTextView.text = "6"
-
-    // to display a "Dice Rolled!" message
-    //Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
-
 
     /**
      * Roll the dice and update the screen with the result.
@@ -60,10 +46,12 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         // Update the ImageView with the correct drawable resource ID
-        diceImageView.setImageResource(drawableResource)
+        diceImageView1.setImageResource(drawableResource)
+        diceImageView2.setImageResource(drawableResource)
 
         // Update the content description
-        diceImageView.contentDescription = diceRoll.toString()
+        diceImageView1.contentDescription = diceRoll.toString()
+        diceImageView2.contentDescription = diceRoll.toString()
     }
 
     class Dice(private val numSides: Int) {
@@ -72,32 +60,4 @@ class MainActivity : AppCompatActivity() {
             return (1..numSides).random()
         }
     }
-
-    private fun flipCoin() {
-        // Create new Coin object with 2 sides and flip it
-        val coin = Coin(2)
-        val coinFlip = coin.flip()
-
-        // Determine which drawable resource ID to use based on the coin flip
-        val drawableResource = when (coinFlip) {
-            1 -> R.drawable.group_1
-            2 -> R.drawable.group_2
-            else -> R.drawable.group_1
-        }
-
-        // Update the ImageView with the correct drawable resource ID
-        coinImageView.setImageResource(drawableResource)
-
-        // Update the content description
-        coinImageView.contentDescription = coinFlip.toString()
-     }
-
-    class Coin(private val numSides: Int) {
-
-        fun flip(): Int {
-            return (1..numSides).random()
-        }
-    }
-
-
 }

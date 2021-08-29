@@ -8,55 +8,47 @@
 
     <Button
         android:id="@+id/rollBtn"
-        android:layout_width="160dp"
-        android:layout_height="198dp"
-        android:alpha="0"
+        android:layout_width="216dp"
+        android:layout_height="69dp"
+        android:background="@drawable/btn"
+        android:shadowColor="#931616"
         android:text="@string/btn_roll"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:theme="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.414" />
+        app:layout_constraintTop_toBottomOf="@+id/diceIV1"
+        app:layout_constraintVertical_bias="0.342" />
 
     <ImageView
-        android:id="@+id/diceIV"
+        android:id="@+id/diceIV1"
         android:layout_width="160dp"
         android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="208dp"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        tools:srcCompat="@drawable/dice_1"
-        app:srcCompat="@drawable/dice_1"/>
+        app:srcCompat="@drawable/dice_1"
+        tools:srcCompat="@drawable/dice_1" />
 
     <ImageView
-        android:id="@+id/coinIV"
+        android:id="@+id/diceIV2"
         android:layout_width="160dp"
         android:layout_height="200dp"
-        android:contentDescription="@string/coin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toEndOf="@+id/rollBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        app:srcCompat="@drawable/group_1" />
-
-    <Button
-        android:id="@+id/flipBtn"
-        android:layout_width="160dp"
-        android:layout_height="200dp"
-        android:text="@string/flip"
-        android:alpha="0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/diceIV1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toEndOf="@+id/rollBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintStart_toEndOf="@+id/diceIV1"
+        app:layout_constraintTop_toTopOf="@+id/diceIV1"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/dice_1"
+        tools:srcCompat="@drawable/dice_1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
